@@ -447,4 +447,20 @@ selectStars();
 animateStars();
 
 
-  
+
+
+
+const button = document.querySelector('.btn2');
+
+  button.addEventListener('click', () => {
+    // Bắt đầu animation charge
+    button.classList.add('charging');
+  });
+
+  button.addEventListener('animationend', (event) => {
+    // Kiểm tra xem animation kết thúc là animation charge không
+    if (event.animationName === 'charge') {
+      // Chuyển trang
+      window.location.href = 'trang_moi.html'; // Thay đổi thành URL bạn muốn
+    }
+  });

@@ -38,3 +38,149 @@ body {
   border-radius: 2px;
   background: white;
 }
+
+
+.container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1em;
+  width: 300px; /* Điều chỉnh chiều rộng tùy ý */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  border-radius: 10px;
+  text-align: center; /* Căn giữa theo chiều ngang */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa nội dung theo chiều ngang */
+  justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+  z-index: 10;
+}
+
+
+.wrap-btn2 {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  width: 7em;
+  height: 2.5em;
+  padding: 0.15em;
+  border: 0.1em solid #fff;
+  border-radius: 0.3em;
+  position: relative;
+}
+
+.wrap-btn2::after {
+  content: "";
+  background-color: #fff;
+  width: 0.1em;
+  height: 0.6em;
+  position: absolute;
+  right: -0.35em;
+}
+
+.btn2 {
+  border-radius: 0.25em;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #f00 12%, transparent 12%);
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn2:hover {
+  background: linear-gradient(to right, #f00 10%, #222 10%);
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+}
+
+.btn2::before {
+  content: "charge now!";
+  border-radius: none;
+  position: absolute;
+  color: #fff;
+  top: 25%;
+  left: 25%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.btn2:hover::after {
+  display: none;
+}
+
+.btn2:hover::before {
+  opacity: 1;
+}
+
+.btn2::after {
+  content: "";
+  border-radius: none;
+  width: 100%;
+  height: 100%;
+  background-color: #0f3;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation: charge 3s linear forwards;
+  display: none;
+  z-index: -1;
+}
+h3{
+  color: white;
+}
+
+@keyframes charge {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+
+.btn2 ion-icon.flash {
+  font-size: 2em;
+  margin-left: 0.5em;
+  color: #fff;
+  opacity: 0;
+  z-index: 3;
+}
+
+.btn2:active {
+  background: #222;
+  z-index: -2;
+}
+
+.btn2:active::after {
+  display: block;
+}
+
+.btn2:active ion-icon.flash {
+  opacity: 1;
+}
+
+.btn2:active::before {
+  display: none;
+}
+
+.btn2:active:hover {
+  animation: none;
+}
