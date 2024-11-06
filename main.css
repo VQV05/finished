@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  background: #dc9aed;
+  background: #65a1d6;
 }
 
 #cake {
@@ -101,7 +101,7 @@ body {
 }
 
 .text {
-  color: #eae7e7;
+  color: #d45538;
   font-family: 'Lato', sans-serif;
   font-size: 40px;
   font-weight: 300;
@@ -115,6 +115,6 @@ body {
      font-family: 'Lato', sans-serif;
     font-size: 40px;
      font-weight: 600;
-    color: #50a9f3;
+    color: #c3e03e;
   }
 }
