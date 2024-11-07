@@ -450,17 +450,31 @@ animateStars();
 
 
 
-const button = document.querySelector('.btn2');
+let animationTimeout;
 
-  button.addEventListener('click', () => {
-    // Bắt đầu animation charge
-    button.classList.add('charging');
-  });
+function startAnimation() {
+    const button = document.querySelector('.btn2');
+    button.classList.add('active'); // Thêm class để bắt đầu animation
 
-  button.addEventListener('animationend', (event) => {
-    // Kiểm tra xem animation kết thúc là animation charge không
-    if (event.animationName === 'charge') {
-      // Chuyển trang
-      window.location.href = 'trang_moi.html'; // Thay đổi thành URL bạn muốn
+    // Thiết lập timeout để chuyển trang sau 3 giây
+    animationTimeout = setTimeout(() => {
+        window.location.href = 'https://vqv05.github.io/daul/'; // Thay đổi URL đến trang bạn muốn
+    }, 3000);
+}
+
+function resetAnimation() {
+    if (animationTimeout) { // Kiểm tra xem có timeout nào đang chạy không
+        clearTimeout(animationTimeout); // Hủy timeout
+        animationTimeout = null; // Đặt lại timeout về null
     }
-  });
+    
+    const button = document.querySelector('.btn2');
+    button.classList.remove('active'); // Xóa class animation
+
+    // Nếu có thêm các class khác cần xóa, hãy thêm vào đây
+    // button.classList.remove('class-name-1');
+    // button.classList.remove('class-name-2');
+
+    // Đặt lại các thuộc tính khác nếu cần thiết
+    // Ví dụ: button.style = ''; // Đặt lại các thuộc tính style
+}
